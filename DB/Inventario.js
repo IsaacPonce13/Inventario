@@ -1,10 +1,6 @@
 class Inventario{
     constructor(){
-        this.ListaP = [
-            {id:1, nombre:'a', cantidad: 10, costo: 20}, 
-            {id:2, nombre:'b', cantidad: 15, costo: 25},
-            {id:3, nombre:'c', cantidad: 20, costo: 30}
-        ];
+        this.ListaP = [];
     }
 
     agregar(NewProd){
@@ -14,15 +10,15 @@ class Inventario{
 
     buscar(codigoProd){
         for (let i=0; i < this.ListaP.length; i++){
-            if(this.ListaP[i].codigo == codigoProd){
+            if(this.ListaP[i].idP == codigoProd){
                 return this.ListaP[i];
             }
         }
-        return null;
+        return {};
     }
 
     listar(){
         return this.ListaP;
     }
 }
-module.exports = Inventario;
+module.exports = new Inventario();
